@@ -8,4 +8,4 @@ move items between them.
 
 ## Preview
 
-![Screenshot](./screenshot.png);
+![Screenshot](./screenshot.png)
