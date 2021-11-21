@@ -70,14 +70,18 @@ function registerEvents() {
   }
 
   allToRight.addEventListener('click', () => {
-    rightList = rightList.concat(leftList);
+    // rightList = rightList.concat(leftList);
+    //refactor with spread ...
+    rightList = [...rightList, ...leftList];
     leftList = [];
     clearDom();
     renderDom(leftList, rightList);
   });
 
   allToLeft.addEventListener('click', () => {
-    leftList = leftList.concat(rightList);
+    // leftList = leftList.concat(rightList);
+    //refactor with spread ...
+    leftList = [...leftList, ...rightList];
     rightList = [];
     clearDom();
     renderDom(leftList, rightList);
@@ -89,7 +93,8 @@ function registerEvents() {
       if (chkBox.checked == true) {
         rightList.forEach((item, index) => {
           if (item.id == chkBox.id) {
-            leftList = leftList.concat(item);
+            // leftList = leftList.concat(item);
+            leftList = [...leftList, ...rightList];
             rightList.splice(index, 1);
           }
         });
@@ -104,7 +109,8 @@ function registerEvents() {
       if (chkBox.checked == true) {
         leftList.forEach((item, index) => {
           if (item.id == chkBox.id) {
-            rightList = rightList.concat(item);
+            // rightList = rightList.concat(item);
+            rightList = [...rightList, ...leftList];
             leftList.splice(index, 1);
           }
         });
