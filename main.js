@@ -94,7 +94,7 @@ function registerEvents() {
         rightList.forEach((item, index) => {
           if (item.id == chkBox.id) {
             // leftList = leftList.concat(item);
-            leftList = [...leftList, ...rightList];
+            leftList = [...leftList, item];
             rightList.splice(index, 1);
           }
         });
@@ -110,7 +110,7 @@ function registerEvents() {
         leftList.forEach((item, index) => {
           if (item.id == chkBox.id) {
             // rightList = rightList.concat(item);
-            rightList = [...rightList, ...leftList];
+            rightList = [...rightList, item];
             leftList.splice(index, 1);
           }
         });
